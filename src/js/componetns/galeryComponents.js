@@ -7,10 +7,10 @@ export default function markupCreator (arr){
        />
    </a>
    <ul class="item__discription">
-       <li>${likes} </li>
-       <li>${views} </li>
-       <li>${comments}</li>
-       <li>${downloads}</li>
+       <li>Like: ${likes} </li>
+       <li>Views: ${views} </li>
+       <li>Comments: ${comments}</li>
+       <li>Downloads: ${downloads}</li>
    </ul>
 </li>`}).join('');
 }
