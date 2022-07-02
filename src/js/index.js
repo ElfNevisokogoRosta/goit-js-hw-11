@@ -24,7 +24,7 @@ formEl.addEventListener('submit', onSearchForm);
 const imgAPI = new ImgAPI;
 async function onSearchForm(e){
     e.preventDefault();
-    //testBtn.style.display = 'none';
+    testBtn.style.display = 'none';
     clearPage();
         if(e.currentTarget.elements.searchQuery.value.trim() === ""){
             e.currentTarget.reset();
@@ -36,7 +36,6 @@ async function onSearchForm(e){
         if(imgAPI.totalHits !== 0){
             Notify.success(`We found ${imgAPI.totalHits} result`);
             testBtn.style.display = 'block';
-            imgAPI.resetPage();
         }
        
 };
