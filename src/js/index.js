@@ -32,12 +32,17 @@ async function onSearchForm(e){
             return Notify.warning('Enter valid data');
         }
         imgAPI.q = e.currentTarget.elements.searchQuery.value.trim();
-        const elements = await imgAPI.fetchImg();
-        addingMarkup(elements);
-        if(imgAPI.totalHits !== 0){
-            Notify.success(`We found ${imgAPI.totalHits} result`);
-            testBtn.style.display = 'block';
-        };
+        try {
+            const elements = await imgAPI.fetchImg();
+            addingMarkup(elements);
+            if(imgAPI.totalHits !== 0){
+                Notify.success(`We found ${imgAPI.totalHits} result`);
+                testBtn.style.display = 'block';
+            };
+        } catch (error) {
+            console.log(error);
+        }
+       
        
 };
 async function loadMore(){
