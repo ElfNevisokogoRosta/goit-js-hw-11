@@ -21,7 +21,6 @@ export default class FetchAPI{
             page: this.page,
         });
         const url  = `${URL}?${options}`;
-        console.log(axios.get(url));
         const responce = await axios.get(url);
         if(responce.data.totalHits === 0){
             Notify.failure("Sorry, there are no images matching your search query. Please try again.");
